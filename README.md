@@ -42,6 +42,36 @@ Select users.name, users.surname from users join pets on users.user_id=pets.user
 ![](https://github.com/kulichkinayuliya/SQL/blob/main/file/WINWORD_8VT72x7rGd.png)
 
 ### ✔️ Решение:
+select * from SOTR where BirthDate BETWEEN '1977-01-01' and '1983-12-31';
 
+### Условие Тест 2: 
+Написать запрос, который выводит содержимое таблицы SOTR по сотрудникам, у которых пол – женский.
 
+### ✔️ Решение:
+select * from SOTR where sex = 'W';
+
+### Условие Тест 3:
+![](https://github.com/kulichkinayuliya/SQL/blob/main/file/WINWORD_MzLTMfe2z9.png)
+
+### ✔️ Решение:
+select SOTR.Name, SOTR.Address, ZARP.Zarp from SOTR join ZARP on SOTR.Name = ZARP.Name where Name = 'Федор';
+
+### Условие Тест 4: 
+Написать запрос, который из таблиц SOTR и ZARP выводит следующую информацию: Имя сотрудника; Адрес; Зарплата
+
+Примечание. Если по одному из сотрудников зарплата не указана, то в результирующей выборке в поле Зарплата указывать 0.
+
+### ✔️ Решение:
+select SOTR.Name, SOTR.Address, IS NULL (ZARP.Zarp, 0) from SOTR left join ZARP on SOTR.Name = ZARP.Name;
+
+### Условие Тест 5: 
+![](https://github.com/kulichkinayuliya/SQL/blob/main/file/WINWORD_mSTenuK1W7.png)
+
+### ✔️ Решение:
+select SOTR.Name, IS NULL (SUM(PAYMENTS. Amount), 0) from SOTR left join PAYMENTS on SOTR.Name = PAYMENTS.Name GROUP BY Name;
+
+---
+
+## ✏️ Задание 4
+### Условие: 
    
