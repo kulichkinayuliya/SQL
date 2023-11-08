@@ -70,8 +70,5 @@ select SOTR.Name, SOTR.Address, IS NULL (ZARP.Zarp, 0) from SOTR left join ZARP 
 ### ✔️ Решение:
 select SOTR.Name, IS NULL (SUM(PAYMENTS. Amount), 0) from SOTR left join PAYMENTS on SOTR.Name = PAYMENTS.Name GROUP BY Name;
 
----
 
-## ✏️ Задание 4
-### Условие: 
    
